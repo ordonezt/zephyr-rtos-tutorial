@@ -1,0 +1,14 @@
+Bueno, funciona pero no se porque el sleep esta raro, o no funciona o esta re a las chapas
+
+Actualizacion: Si funciona, pero aparentemente el emulador qemu_x86 tiene un bardo con el 
+timing (no se si es un error exactamente), se soluciona tocando el kconfig pero todavia no
+entiendo como.
+Ver: https://github.com/zephyrproject-rtos/zephyr/issues/26242
+https://docs.zephyrproject.org/1.14.0/reference/kconfig/CONFIG_QEMU_TICKLESS_WORKAROUND.html
+
+La solucion que encontre es compilar con otro emulador -> qemu_x86_64
+Para poder "re-buildear" el proyecto con otra placa tenes que usar el mismo comando pero 
+agregarle una -p, o sea:
+
+west build -b qemu_x86_64
+

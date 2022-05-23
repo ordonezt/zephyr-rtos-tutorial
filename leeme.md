@@ -49,3 +49,15 @@ Para poder "re-buildear" el proyecto con otra placa tenes que usar el mismo coma
 agregarle una -p, o sea:
 
 west build -b qemu_x86_64
+
+Para ver los mensajes de consola del micro podes usar un adaptador USB-UART, lo conectas
+y te fijas que puerto le asigno tu pc asi
+
+dmesg | grep tty
+
+Cuando encuentres el puerto asignado usa esto (puede que tengas que instalar minicom
+sudo apt-get install minicom)
+
+sudo minicom -D /dev/ttyUSB0
+
+En vez de ttyUSB0 pone el que corresponda
